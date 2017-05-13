@@ -1,0 +1,154 @@
+body {
+		
+		 background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
+
+		  background-size: cover;
+		  background-color: black;
+	}
+#logo{
+		position: fixed;
+	    bottom: 0;
+	    width: 100%;
+}
+
+
+.page-header > h1 {
+		font-size: 180px;
+		font-family: 'Poppins', sans-serif;
+		color: #ffffff;
+		letter-spacing: 4px;
+		opacity: .9;
+		align-content: center;
+		margin-left: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  margin: 0 auto 30px;
+}
+
+#regbar {
+  height: 67px;
+  
+}
+
+#navthing {
+  position: fixed; top: 10; right: 0; border: 0;
+  margin-right: 70px;
+}
+
+h2 {
+  padding: 20px;
+  color: #ffb74d;
+}
+
+fieldset {
+  border: none;
+}
+
+.login {
+  position: relative;
+  width: 350px;
+  display: none;
+}
+
+#navDec{
+	color: #ffffff;
+	
+}
+#regform {
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+	letter-spacing: 2px;
+}
+#loginform {
+	letter-spacing: 2px;
+	font-family: 'Poppins', sans-serif;
+	color: #ffffff;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 15px solid #ffcc80;
+  left: 10%;
+  position: absolute;
+  top: -10px;
+  opacity: .8;
+}
+
+.formholder {
+  background: #ffcc80;
+  opacity: .9;
+  width: 350px;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.formholder input[type="email"], .formholder input[type="password"] {
+  padding: 7px 5px;
+  margin: 10px 0;
+  width: 96%;
+  display: block;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #ffb74d;
+}
+.formholder input[type="submit"] {
+  background: #ffcc80;
+  padding: 10px;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  border: 1px;
+  color: #fff;
+  border-radius: 5px;
+}
+.formholder input[type="submit"]:hover {
+  opacity: .5;
+  text-decoration: none;
+}
+
+.randompad {
+  padding: 10px;
+}
+
+.green {
+  color: #ffb74d;
+}
+
+a {
+  color: #ffb74d;
+  text-decoration: none; }
+
+a:hover {
+  color: #ffb74d;
+  opacity: .5;
+}
+
+#loginform:hover {
+	text-decoration: none;
+
+}
+#regform:hover {
+	text-decoration: none;
+}
+
+
+
+
+
+
