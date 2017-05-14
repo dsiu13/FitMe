@@ -58,7 +58,7 @@ module.exports = function(passport, user) {
  
                             UserPassword: newUserPassword,
  
-                            Height: req.body.CurrentHeight,
+                            Height: req.body.Height,
  
                             CurrentWeight: req.body.CurrentWeight,
 
