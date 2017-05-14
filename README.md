@@ -10,3 +10,4 @@ Things To Do
 4. Dashboard
 5. JS to Calc - Caloric Intake, Cal Burned from Exercise, etc...
 6. Routing to Sign Up via Home Pg
+7. Testing via MochaJS & ChaiJS
