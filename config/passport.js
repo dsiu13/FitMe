@@ -24,7 +24,7 @@ module.exports = function(passport, user) {
  
         function(req, UserName, UserPassword, done) {
  
-            var generateHash = function(password) {
+            var generateHash = function(UserPassword) {
  
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
  
@@ -42,21 +42,21 @@ module.exports = function(passport, user) {
                 {
  
                     return done(null, false, {
-                        message: 'That name is already taken'
+                        message: 'That Name is Already Taken.'
                     });
  
                 } else
  
                 {
  
-                    var userPassword = generateHash(password);
+                    var newUserPassword = generateHash(password);
  
                     var data =
  
                         {
                             UserName: UserName,
  
-                            UserPassword: userPassword,
+                            UserPassword: newUserPassword,
  
                             Height: req.body.CurrentHeight,
  
@@ -87,6 +87,75 @@ module.exports = function(passport, user) {
             });
  
         }
+ 
+    ));
+
+
+    //LOCAL SIGNIN
+    passport.use('local-signin', new LocalStrategy(
+ 
+    {
+ 
+        // by default, local strategy uses username and password
+ 
+        usernameField: 'UserName',
+ 
+        passwordField: 'UserPassword',
+ 
+        passReqToCallback: true // allows us to pass back the entire request to the callback
+ 
+    },
+ 
+ 
+    function(req, UserName, UserPassword, done) {
+ 
+        var User = user;
+ 
+        var isValidPassword = function(userpass, UserPassword) {
+ 
+            return bCrypt.compareSync(password, userpass);
+ 
+        }
+ 
+        User.findOne({
+            where: {
+                UserName: UserName
+            }
+        }).then(function(user) {
+ 
+            if (!user) {
+ 
+                return done(null, false, {
+                    message: 'User Name Does Not Exist.'
+                });
+ 
+            }
+ 
+            if (!isValidPassword(user.password, password)) {
+ 
+                return done(null, false, {
+                    message: 'Incorrect Password.'
+                });
+ 
+            }
+ 
+ 
+            var userinfo = user.get();
+            return done(null, userinfo);
+ 
+ 
+        }).catch(function(err) {
+ 
+            console.log("Error:", err);
+ 
+            return done(null, false, {
+                message: 'Something Went Wrong With Your Sign-In.'
+            });
+ 
+        });
+ 
+ 
+    }
  
     ));
 
