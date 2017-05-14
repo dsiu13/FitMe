@@ -19,7 +19,6 @@
     "method-override": "^2.3.8",
     "mysql": "^2.12.0",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
     "sequelize": "^3.30.4"
   }
 }
