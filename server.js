@@ -24,6 +24,7 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+
 //For Handlebars
 app.set('views', './views/layouts')
 app.engine('hbs', exphbs({
@@ -45,7 +46,7 @@ app.use(methodOverride("_method"));
 
 //load passport strategies
 var authRoute = require('./routes/auth-routes.js')(app,passport);
-
+require('./config/passport.js')(passport);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {
