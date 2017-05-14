@@ -1,8 +1,5 @@
-<<<<<<< 7f6f63dfe8b08e39e60893996435451f8020017a
+
 node__modules
 node_modules/
-
-=======
-node_modules
-node_modules/
->>>>>>> added gitignore
+.env
+config.json
