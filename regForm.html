@@ -3,24 +3,80 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-<style type="text/css">
-	.jumbotron { float: center; background-color: #FFDAB9; height: 50%; width: 60%; border-style: double; border-width: 20px; border-color: #cc5500; }
 
-body {
-     
-    background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
- 
-     background-size: cover;
-   background-color: black;
-  }
-
-  div { width: 60%; float: center;}
-</style>
-
-	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 
+      <style type="text/css">
+      .button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+       strong {font-family: 'Poppins', sans-serif;}
+    input[type=text] {
+     border-style: solid;
+    border-color: #cc5500;
+    border-width: 2px;
+}
+p {font-family: 'Poppins', sans-serif;}
+  
+        h1, option {font-family: 'Poppins', sans-serif;}
+	     .jumbotron { float: center; background-color: white; height: 50%; width: 100%; border-style: double; border-width: 20px; border-color: #cc5500; }
+
+
+          div { width: 60%; float: center;}
+   h5{color: red;}
+      
+       img {float: right;  width: 200px;
+    height: 100px;
+  
+    /* Rotate div */
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);}
+
+
+
+          </style>
+
+	           <title>Fit Me</title>
+       
 </head>
 
 
@@ -28,7 +84,9 @@ body {
 
 
 <div class="jumbotron">
-  <h1 class="display-3">Welcome!</h1>
+
+
+  <h1 class="display-3">Welcome!</h1> <img src="http://www.ihomewholesale.com/media/Amazing/1070138L-Bandana.gif">
   <p class="lead">In order to assist you on your fitness journey, we'll need some info below</p>
   <hr class="my-4">
 <form>
@@ -37,11 +95,11 @@ body {
     <div class="inputBoxes">
 		<input type="text" class="form-control userNameTextBox" id="userName" placeholder="Enter your username here">
       <!-- username error message -->
-      <h3 id="error-prompt"> </h3>
+      <div id="error-prompt"> </div>
       <!-- username error message -->
 
 
-		<button>Check Availability</button>
+		<button>check</button>
 
  <form id="multiselectForm" method="post" class="form-horizontal">
     <div class="form-group">
@@ -58,20 +116,17 @@ body {
   	</form>
   <div class="form-group">
     <label for="exampleInputPassword1"><strong>Password</strong></label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <div class="form-group">
-    <label for="exampleInputFile">Choose an Image</label>
-    <input type="file" id="exampleInputFile">
-  </div>
+
     <div class="form-group">
     <label for="exampleWeight1"><strong>Current Weight</strong></label>
-    <input type="Weight" class="form-control" id="exampleInputWeight" placeholder="Please enter your current weight">
+    <input type="text" class="form-control" id="exampleInputWeight" placeholder="Please enter your current weight">
   </div>
 </form>
  <div class="form-group">
     <label for="exampleGoalWeight1"><strong>Goal Weight</strong></label>
-    <input type="GoalWeight" class="form-control" id="exampleInputGoalWeight" placeholder="Please enter your desired weight">
+    <input type="text" class="form-control" id="exampleInputGoalWeight" placeholder="Please enter your desired weight">
   </div>
   <label class="control-label"><strong>Eating Habits</strong></label>
                    
@@ -89,6 +144,8 @@ body {
                             <label>
                                 <input type="checkbox" id="saltCheckbox" value="Low salt">I eat everything
                             </label>
+                            <br>
+                            <a href="#" class="w3-btn w3-black">Link Button</a>
 
                         </div>
                     </div>
@@ -103,17 +160,20 @@ body {
      
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js">
 
-$(document).ready(function () {
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script><script type="text/javascript">
+    $(document).ready(function () {
 
  $("button").on("click", userInput)
  
  
- 	function userInput() {
- 		var userName =  $("#userName")
- 		console.log($("#userName").val() );
- 		
+  function userInput() {
+    var userName =  $("#userName")
+    console.log($("#userName").val() );
+    
      var error = "";
   var illegalChars = /\W/; // allow letters, numbers, and underscores
   
@@ -131,7 +191,7 @@ $(document).ready(function () {
          var errorTag = document.createElement("H5")
          errorTag.innerHTML = error;
          document.getElementById("error-prompt").appendChild(errorTag);
- 		return false;
+    return false;
  
     } else if (illegalChars.test(userName.val())) {
         document.getElementById("userName").style.background = 'Yellow';
@@ -147,7 +207,9 @@ $(document).ready(function () {
     return true;
  }
   });
-	
+  
+  </script>
+
 </script>
 
 
