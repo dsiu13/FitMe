@@ -1,13 +1,14 @@
 body {
-		
+
 		 background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
 		  background-size: cover;
 		  background-color: yellow;
+
 	}
 #logo{
-		position: fixed;
-	    bottom: 0;
-	    width: 100%;
+	 position: fixed;
+	 bottom: 0;
+	 width: 100%;
 }
 
 
