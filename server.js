@@ -12,7 +12,7 @@ var exphbs = require('express-handlebars');
 var methodOverride = require('method-override');
 
 // See files in public folder
-app.use(express.static(__dirname + '/public'));
+// app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
 
 // Sets up the Express app to handle data parsing
