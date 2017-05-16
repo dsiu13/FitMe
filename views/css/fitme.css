@@ -1,8 +1,9 @@
 body {
-		
-		background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
-		background-size: cover;
-		background-color: black;
+
+		 background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
+		  background-size: cover;
+		  background-color: yellow;
+
 	}
 #logo{
 	 position: fixed;
@@ -83,7 +84,7 @@ fieldset {
 }
 
 .formholder {
-  background: #ffcc80;
+  background: #cccccc;
   opacity: .9;
   width: 350px;
   border-radius: 5px;
