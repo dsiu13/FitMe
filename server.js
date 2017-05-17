@@ -35,10 +35,11 @@ app.set('view engine', '.hbs');
 // Requiring our models for syncing
 var db = require("./models");
 
-// Routing
+
+//Routing
 require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
-// require('./routes/auth-routes.js')(app);
+require('./routes/auth-routes.js')(app);
 
 // POST Method
 app.use(methodOverride("_method"));
