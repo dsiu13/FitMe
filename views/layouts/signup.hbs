@@ -32,7 +32,16 @@
 
     <script type="text/javascript">
 
-    $(document).on("submit", "#signup", signUpForm);   
+    $(document).on("submit", "#signup", signUpForm);
+
+
+        function updateUsers(){
+            $.get("/api/dashboard/postUser", function(){
+                console.log("signup", data);
+                signup = data;
+            })
+        }
+
 
         function signUpForm(){
 
@@ -50,10 +59,12 @@
 
             console.log(signup);
 
-            // app.post("api/user", function(){
-            //     db
-            // })
-        };
+        $.post("/api/dashboard/postUser", signup, function(req, res) {
+
+        }) 
+ 
+        
+    };
     
 
     </script>
