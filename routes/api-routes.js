@@ -101,7 +101,7 @@ module.exports = function(app) {
       CurrentWeight: req.body.CurrentWeight,
       GoalWeight: req.body.GoalWeight,
       DailyCalorieGain: req.body.DailyCalorieGain,
-      DailyCalorieLost: req.body.DailyCalorieLost,
+      DailyCalorieLost: req.body.DailyCalorieLost
     }).then(function(cb) {
       res.json(cb);
     });
