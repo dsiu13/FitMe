@@ -36,7 +36,7 @@ app.set('view engine', '.hbs');
 var db = require("./models");
 
 // Routing
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 // require('./routes/auth-routes.js')(app);
 
