@@ -1,10 +1,12 @@
 body {
+  background: url(http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-		 background-image: url("http://wac.450f.edgecastcdn.net/80450F/97zokonline.com/files/2015/12/RS5709_140156748-scr.jpg"); 
-		  background-size: cover;
-		  background-color: yellow;
 
-	}
 #logo{
 	 position: fixed;
 	 bottom: 0;
@@ -76,7 +78,7 @@ fieldset {
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-bottom: 15px solid #ffcc80;
+  border-bottom: 15px solid #ef5350;
   left: 10%;
   position: absolute;
   top: -10px;
@@ -84,13 +86,14 @@ fieldset {
 }
 
 .formholder {
-  background: #cccccc;
+  background: #ef5350;
   opacity: .9;
   width: 350px;
   border-radius: 5px;
   padding-top: 5px;
+  border-radius: 25px;
 }
-.formholder input[type="email"], .formholder input[type="password"] {
+.formholder input[type="username"], .formholder input[type="password"] {
   padding: 7px 5px;
   margin: 10px 0;
   width: 96%;
@@ -103,12 +106,12 @@ fieldset {
   -o-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-.formholder input[type="email"]:focus, .formholder input[type="password"]:focus {
+.formholder input[type="username"]:focus, .formholder input[type="password"]:focus {
   outline: none;
-  box-shadow: 0 0 1px 1px #ffb74d;
+  box-shadow: 0 0 1px 1px #ef5350;
 }
 .formholder input[type="submit"] {
-  background: #ffcc80;
+  background: #ef5350;
   padding: 10px;
   font-size: 20px;
   display: block;
@@ -124,10 +127,6 @@ fieldset {
 
 .randompad {
   padding: 10px;
-}
-
-.green {
-  color: #ffb74d;
 }
 
 a {
