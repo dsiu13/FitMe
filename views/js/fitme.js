@@ -23,4 +23,8 @@ $(document).mouseup(function (e)
     }
 });
 
+$("#regForm").on('click', function(){
+    document.load('../layouts/signup.hbs')
+});
+
 
