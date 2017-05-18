@@ -3,6 +3,7 @@
  
 <head>
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
  
 <body>
@@ -10,23 +11,63 @@
     <form id="signup" name="signup" method="post" action="/signup">
     <ul>
         <label for="UserName">User Name</label>
-        <input class="text" name="UserName" type="text" />
+        <input class="UserName" name="UserName" type="text" />
 
         <label for="Password">Password</label>
-        <input name="Password" type="password" />
+        <input class="pw" name="Password" type="password" />
 
-        <label for="lastname">Height</label>
-        <input name="height" type="text" />
+        <label for="height">Height</label>
+        <input class="height" name="height" type="text" />
 
-        <label for="password">Current Weight</label>
-        <input name="cWeight" type="text" />
+        <label for="cWeight">Current Weight</label>
+        <input class="cWeight" name="cWeight" type="text" />
 
-        <label for="password">Goal Weight</label>
-        <input name="cWeight" type="text" />
+        <label for="gWeight">Goal Weight</label>
+        <input class="gWeight" name="gWeight" type="text" />
    
-        <input class="btn" type="submit" value="Sign Up" />
+        <input class="btn" type="submit" value="Sign Up" id="signupSub" />
      <ul>
     </form>
+
+
+    <script type="text/javascript">
+
+    $(document).on("submit", "#signup", signUpForm);
+
+
+        function updateUsers(){
+            $.get("/api/dashboard/postUser", function(){
+                console.log("signup", data);
+                signup = data;
+            })
+        }
+
+
+        function signUpForm(){
+
+            console.log("on click sub works")
+       
+       event.preventDefault();
+
+         var signup = {
+         UserName: $("input.UserName").val().trim(),
+         UserPassword: $("input.pw").val().trim(),
+         Height: $("input.height").val().trim(),
+         CurrentWeight: $("input.cWeight").val().trim(),
+         GoalWeight: $("input.gWeight").val().trim()
+            }
+
+            console.log(signup);
+
+        $.post("/api/dashboard/postUser", signup, function(req, res) {
+
+        }) 
+ 
+        
+    };
+    
+
+    </script>
  
 </body>
  

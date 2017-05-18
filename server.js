@@ -12,7 +12,6 @@ var exphbs = require('express-handlebars');
 var methodOverride = require('method-override');
 
 // See files in public folder
-// app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
 
 // Sets up the Express app to handle data parsing
@@ -36,10 +35,11 @@ app.set('view engine', '.hbs');
 // Requiring our models for syncing
 var db = require("./models");
 
+
 //Routing
-// require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
-// require('./routes/auth-routes.js')(app);
+require('./routes/auth-routes.js')(app);
 
 // POST Method
 app.use(methodOverride("_method"));
