@@ -39,7 +39,7 @@ var db = require("./models");
 //Routing
 require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
-require('./routes/auth-routes.js')(app);
+// require('./routes/auth-routes.js')(app);
 
 // POST Method
 app.use(methodOverride("_method"));
@@ -50,7 +50,7 @@ var authRoute = require('./routes/auth-routes.js')(app, passport);
 require('./config/passport.js')(passport, db.user);
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   })
