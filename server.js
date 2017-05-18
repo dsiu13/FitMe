@@ -39,7 +39,7 @@ var db = require("./models");
 //Routing
 require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
-// require('./routes/auth-routes.js')(app);
+
 
 // POST Method
 app.use(methodOverride("_method"));
