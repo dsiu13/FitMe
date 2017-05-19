@@ -21,10 +21,10 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     DailyCalorieGain: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     DailyCalorieLost: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     }
   });
   return User;

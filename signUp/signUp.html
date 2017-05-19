@@ -2,16 +2,10 @@
 
 <html>
 
- 
 <head>
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-<head><link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
@@ -26,21 +20,14 @@
 		border-color: #ef5350;
 		border-width: 2px;
 }
-.w3-container {
-	text-align: center; 
-}
-.lead {
-	text-align: center;
-}
-
-p {font-family: 'Poppins', sans-serif; }
+p {font-family: 'Poppins', sans-serif; size: }
 	
 				font, option {font-family: 'Poppins', sans-serif; color: #ef5350;}
 				
-			 .jumbotron { float: center; background-color: white; height: 50%; width: 100%; border-style: solid; border-width: 10px; border-color: #ef5350;  }
+			 .jumbotron { float: center; background-color: white; height: 50%; width: 100%; border-style: solid; border-width: 20px; border-color: #ef5350; }
 
 
-					div { width: 100%; float: center;}
+					div { width: 60%; float: center;}
 	 h5{color: #ef5350;}
 			
 			 img {float: right;  width: 200px;
@@ -51,57 +38,22 @@ p {font-family: 'Poppins', sans-serif; }
 		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
 		transform: rotate(90deg);}
 
-.w3-btn {width:60%; color: white; background-color: #ef5350;  }
-.form-group{
-	font-family: 'Poppins', sans-serif;
-	width: 60%; margin-left: 20%;
-}
-.habits {
-	text-align: center;
-	float: center;
-
-}
+.w3-btn {width:160%; color: white; background-color: #ef5350;  }
 
 					</style>
 
-						 <title>FitMe | Sign Up</title>
+						 <title>Fit Me</title>
 			 
-
 </head>
 
 
 <body>
 
 
-    <form id="signup" name="signup" method="post" action="/signup">
-    <ul>
-        <label for="UserName">User Name</label>
-        <input class="UserName" name="UserName" type="text" />
-
-        <label for="Password">Password</label>
-        <input class="pw" name="Password" type="password" />
-
-        <label for="height">Height</label>
-        <input class="height" name="height" type="text" />
-
-        <label for="cWeight">Current Weight</label>
-        <input class="cWeight" name="cWeight" type="text" />
-
-        <label for="gWeight">Goal Weight</label>
-        <input class="gWeight" name="gWeight" type="text" />
-   
-        <input class="btn" type="submit" value="Sign Up" id="signupSub" />
-     <ul>
-    </form>
-
-
-
-
-
 <div class="jumbotron">
 
 <div class="w3-container">
-<p><font size="30" class="w3-animate-fading">Welcome!</font></p> 
+<p><font size="20"class="w3-animate-fading">Welcome!</font></p> 
 
 </div>
 
@@ -109,12 +61,15 @@ p {font-family: 'Poppins', sans-serif; }
 	<hr class="my-4">
 <form>
 	<div class="form-group">
-		<label for="name" class="form-group"><strong>Full Name</strong></label>
-		<div class="form-group">
-		<input type="text" class="form-control nameTextBox" id="name" placeholder="Enter your full name here">
-	 </div>
+		<label for="exampleInputEmail1"><strong>Username</strong></label>
+		<div class="inputBoxes">
+		<input type="text" class="form-control userNameTextBox" id="userName" placeholder="Enter your username here">
+			<!-- username error message -->
+			<div id="error-prompt"> </div>
+			<!-- username error message -->
 
-	 <form id="multiselectForm" method="post" class="form-horizontal">
+
+ <form id="multiselectForm" method="post" class="form-horizontal">
 		<div class="form-group">
 				<p><strong>Gender</strong><p>
 						<select class="form-control" name="gender">
@@ -123,20 +78,10 @@ p {font-family: 'Poppins', sans-serif; }
 								<option value="other">Other</option>
 						</select>
 				</div>
+		</div>	
+	</div>
 	
 		</form>
-
-	<div class="form-group">
-		<label for="exampleInputEmail1"><strong>Username</strong></label>
-		<div class="inputBoxes">
-		<input type="text" class="form-control userNameTextBox" id="userName" placeholder="Enter your username here">
-			<!-- username error message -->
-			<div id="error-prompt"> </div>
-			<!-- username error message -->
-<br>
-</div>
-	</div>
-
 	<div class="form-group">
 		<label for="exampleInputPassword1"><strong>Password</strong></label>
 		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
@@ -151,7 +96,7 @@ p {font-family: 'Poppins', sans-serif; }
 		<label for="exampleGoalWeight1"><strong>Goal Weight</strong></label>
 		<input type="text" class="form-control" id="exampleInputGoalWeight" placeholder="Please enter your desired weight">
 	</div>
-	<div class="habits"><label class="control-label"><strong>Eating Habits</strong></label>
+	<label class="control-label"><strong>Eating Habits</strong></label>
 									 
 												<div class="checkbox">
 														<label>
@@ -166,18 +111,16 @@ p {font-family: 'Poppins', sans-serif; }
 													<div class="checkbox">
 														<label>
 																<input type="checkbox" id="saltCheckbox" value="Low salt">I eat everything
-														</label> 
-														<br> <br>
+														</label>
+														<br>
 												<button class="w3-btn w3-round-xxlarge">Let's Get Started</button>
 
 												</div>
 										</div>
 										</div> 
-									</div>
 										
 										
-								</div>
-						
+								</div> <!-- /.form-group -->
 
 </form>
 <div class="navbar navbar-default navbar-fixed-bottom">
@@ -191,19 +134,63 @@ p {font-family: 'Poppins', sans-serif; }
    </div>
 	
 </div>
-
-</div>
 		 
 
 
 
+<script
+	src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script><script type="text/javascript">
+		$(document).ready(function () {
 
+ $("button").on("click", userInput)
+ 
+ 
+	function userInput() {
+		var userName =  $("#userName")
+		console.log($("#userName").val() );
+		
+		 var error = "";
+	var illegalChars = /\W/; // allow letters, numbers, and underscores
+	
+		if (userName.val() == "")  {
+				document.getElementById("userName").style.background = 'Pink';
+				 error = "You didn't enter a username.\n";
+			 var errorTag = document.createElement("H5");
+				errorTag.innerHTML = error;
+				 document.getElementById("error-prompt").appendChild(errorTag);
+				return false;
+ 
+		} else if ((userName.val().length < 5) || (userName.val().length > 15)) {
+					document.getElementById("userName").style.background = 'Pink';
+				 error = "The username is the wrong length.\n";
+				 var errorTag = document.createElement("H5")
+				 errorTag.innerHTML = error;
+				 document.getElementById("error-prompt").appendChild(errorTag);
+		return false;
+ 
+		} else if (illegalChars.test(userName.val())) {
+				document.getElementById("userName").style.background = 'Pink';
+				error = "The username contains illegal characters.\n";
+				var errorTag = document.createElement("H5");
+				errorTag.innerHTML = error;
+				document.getElementById("error-prompt").appendChild(errorTag);
+				return false;
+ 
+		 } else {
+				 document.getElementById("userName").style.background = 'White';
+		}
+		return true;
+ }
+	});
+	
+	</script>
 
-
+</script>
 
 
 
 </body>
 
 </html>
-
