@@ -1,0 +1,64 @@
+strong {font-family: 'Poppins', sans-serif;}
+input[type=text] {
+border-style: solid;
+border-color: #ef5350;
+border-width: 2px;
+}
+
+.w3-container {
+    text-align: center; 
+}
+
+.lead {
+    text-align: center;
+}
+
+p {font-family: 'Poppins', sans-serif; }
+    
+font, option {font-family: 'Poppins', sans-serif; color: #ef5350;}
+                
+.jumbotron { 
+float: center; 
+background-color: white; 
+height: 50%; 
+width: 100%; 
+border-style: solid; 
+border-width: 10px; 
+border-color: #ef5350;
+}
+
+
+div { 
+width: 100%; 
+float: center;
+}
+
+h5{
+color: #ef5350;
+}
+            
+img {
+float: right;  
+width: 200px;
+height: 100px;  
+/* Rotate div */
+-ms-transform: rotate(90deg); /* IE 9 */
+-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+transform: rotate(90deg);
+}
+
+.w3-btn {
+width:60%; 
+color: white; 
+background-color: #ef5350;  
+}
+.form-group{
+font-family: 'Poppins', sans-serif;
+width: 60%; 
+margin-left: 20%;
+}
+
+.habits {
+    text-align: center;
+    float: center;
+}

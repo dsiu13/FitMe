@@ -20,14 +20,13 @@
       <div class="arrow-up"></div>
       <div class="formholder">
         <div class="randompad">
-          <form>
+          <form id="signin" name="signin" method="post" action="signin">
            <fieldset>
              <label name="username">Username</label>
-             <input type="username" value="" />
+             <input class="UserName" type="username" value="" />
              <label name="password">Password</label>
-             <input type="password" />
+             <input class="pw" type="password" />
              <input type="submit" value="Login" id="submit-btn" />
-
            </fieldset>
          </form>
         </div>
@@ -43,15 +42,40 @@
 		<div class="page-header">
 		  <h1>FitMe</h1>
 		</div>
-
-
 </div>
+
 </div>
 
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="./js/fitme.js"></script>
+
+<script type="text/javascript">
+    
+    $(document).on("submit", "#signin", signInForm);
+        function updateUsers(){
+            $.get("/api/dashboard/postUser", function(){
+                console.log("signup", data);
+                signup = data;
+            })
+        }
+
+        function signInForm(){
+            console.log("on click sub works")
+       
+       event.preventDefault();
+         var signin = {
+         UserName: $("input.UserName").val().trim(),
+         UserPassword: $("input.pw").val().trim()
+            }
+            console.log(signin);
+        $.post("/api/dashboard/user/postUser", signin, function(req, res) {
+        }) 
+ 
+        
+    };
+</script>
 
 </body>
 </html>
