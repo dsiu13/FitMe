@@ -17,4 +17,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/view.html"));
   });
 
+ app.get("/my-fitness", function(req, res) {
+   res.render("my-fitness" , {})
+    // res.sendFile(path.join(__dirname + "/../public/view.html"));
+  });
+
+
+
 };
