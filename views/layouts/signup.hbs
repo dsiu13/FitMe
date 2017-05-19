@@ -1,12 +1,77 @@
 <!DOCTYPE html>
+
 <html>
+
  
 <head>
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<head><link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+
+			<style type="text/css">
+
+			
+
+			 strong {font-family: 'Poppins', sans-serif;}
+		input[type=text] {
+		 border-style: solid;
+		border-color: #ef5350;
+		border-width: 2px;
+}
+.w3-container {
+	text-align: center; 
+}
+.lead {
+	text-align: center;
+}
+
+p {font-family: 'Poppins', sans-serif; }
+	
+				font, option {font-family: 'Poppins', sans-serif; color: #ef5350;}
+				
+			 .jumbotron { float: center; background-color: white; height: 50%; width: 100%; border-style: solid; border-width: 10px; border-color: #ef5350;  }
+
+
+					div { width: 100%; float: center;}
+	 h5{color: #ef5350;}
+			
+			 img {float: right;  width: 200px;
+		height: 100px; 
+	
+		/* Rotate div */
+		-ms-transform: rotate(90deg); /* IE 9 */
+		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+		transform: rotate(90deg);}
+
+.w3-btn {width:60%; color: white; background-color: #ef5350;  }
+.form-group{
+	font-family: 'Poppins', sans-serif;
+	width: 60%; margin-left: 20%;
+}
+.habits {
+	text-align: center;
+	float: center;
+
+}
+
+					</style>
+
+						 <title>FitMe | Sign Up</title>
+			 
+
 </head>
- 
+
+
 <body>
+
 
     <form id="signup" name="signup" method="post" action="/signup">
     <ul>
@@ -30,47 +95,115 @@
     </form>
 
 
-    <script type="text/javascript">
-
-    // $(document).on("submit", "#signup", signUpForm);
 
 
-        function updateUsers(){
-            $.get("/api/dashboard/postUser", function(){
-                console.log("signup", data);
-                signup = data;
-            })
-        }
+
+<div class="jumbotron">
+
+<div class="w3-container">
+<p><font size="30" class="w3-animate-fading">Welcome!</font></p> 
+
+</div>
+
+	<p class="lead">In order to assist you on your fitness journey, we'll need some info below</p>
+	<hr class="my-4">
+<form>
+	<div class="form-group">
+		<label for="name" class="form-group"><strong>Full Name</strong></label>
+		<div class="form-group">
+		<input type="text" class="form-control nameTextBox" id="name" placeholder="Enter your full name here">
+	 </div>
+
+	 <form id="multiselectForm" method="post" class="form-horizontal">
+		<div class="form-group">
+				<p><strong>Gender</strong><p>
+						<select class="form-control" name="gender">
+								<option value="male">Male</option>
+								<option value="female">Female</option>
+								<option value="other">Other</option>
+						</select>
+				</div>
+	
+		</form>
+
+	<div class="form-group">
+		<label for="exampleInputEmail1"><strong>Username</strong></label>
+		<div class="inputBoxes">
+		<input type="text" class="form-control userNameTextBox" id="userName" placeholder="Enter your username here">
+			<!-- username error message -->
+			<div id="error-prompt"> </div>
+			<!-- username error message -->
+<br>
+</div>
+	</div>
+
+	<div class="form-group">
+		<label for="exampleInputPassword1"><strong>Password</strong></label>
+		<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+	</div>
+
+		<div class="form-group">
+		<label for="exampleWeight1"><strong>Current Weight</strong></label>
+		<input type="text" class="form-control" id="exampleInputWeight" placeholder="Please enter your current weight">
+	</div>
+</form>
+ <div class="form-group">
+		<label for="exampleGoalWeight1"><strong>Goal Weight</strong></label>
+		<input type="text" class="form-control" id="exampleInputGoalWeight" placeholder="Please enter your desired weight">
+	</div>
+	<div class="habits"><label class="control-label"><strong>Eating Habits</strong></label>
+									 
+												<div class="checkbox">
+														<label>
+																<input type="checkbox" id="calorieCheckbox" value="Low calorie">I eat Healthy
+														</label>
+												</div>
+												<div class="checkbox">
+														<label>
+																<input type="checkbox" id="saltCheckbox" value="Low salt">I eat kind of healthy
+														</label>
+												</div>
+													<div class="checkbox">
+														<label>
+																<input type="checkbox" id="saltCheckbox" value="Low salt">I eat everything
+														</label> 
+														<br> <br>
+												<button class="w3-btn w3-round-xxlarge">Let's Get Started</button>
+
+												</div>
+										</div>
+										</div> 
+									</div>
+										
+										
+								</div>
+						
+
+</form>
+<div class="navbar navbar-default navbar-fixed-bottom">
+   <div class="container">
+     <p class="navbar-text pull-left">© 2017 - Site Built By FitMe Team
+          <a href="#" target="_blank" >Learn About Us</a>
+     </p>
+     
+     <a href="http://facebook.com" class="navbar-btn btn-danger btn pull-right">
+     <span class="glyphicon glyphicon-star"></span>  Share on Facebook</a>
+   </div>
+	
+</div>
+
+</div>
+		 
 
 
-        function signUpForm(){
 
-            console.log("on click sub works")
-       
-       event.preventDefault();
 
-         var signup = {
-         UserName: $("input.UserName").val().trim(),
-         Password: $("input.pw").val().trim(),
-         height: $("input.height").val().trim(),
-         cWeight: $("input.cWeight").val().trim(),
-         gWeight: $("input.gWeight").val().trim()
-            }
 
-            console.log(signup);
 
-        $.post("/signup", signup, function(req, res) {
-            console.log(arguments)
-        // $.post("/api/dashboard/postUser", signup, function(req, res) {
 
-        }) 
- 
-        
-    };
-    
 
-    </script>
- 
+
 </body>
- 
+
 </html>
+
