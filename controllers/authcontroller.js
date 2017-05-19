@@ -28,3 +28,13 @@ exports.logout = function(req, res) {
     });
  
 }
+
+exports.history = function(req, res) {
+
+	res.render('fit-past');
+}
+
+exports.goal = function(req, res) {
+
+	res.render('my-fitness');
+}

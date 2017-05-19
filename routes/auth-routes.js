@@ -22,6 +22,10 @@ module.exports = function(app, passport) {
  
  
     app.get('/dashboard', isLoggedIn, authController.dashboard);
+
+    app.get('/history', authController.history);
+
+    app.get('/goal', authController.goal);
  
  
  
