@@ -15,7 +15,7 @@
 <div id="wrap">
   <div id="regbar">
     <div id="navthing">
-      <h2 id="navDec"><a href="#" id="loginform">Login</a> | <a href="#" id="regform"> Register</a></h2>
+      <h2 id="navDec"><a href="#" id="loginform">Login</a> | <a href="/signup" id="regform"> Register</a></h2>
     <div class="login">
       <div class="arrow-up"></div>
       <div class="formholder">
@@ -23,9 +23,9 @@
           <form id="signin" name="signin" method="post" action="signin">
            <fieldset>
              <label name="username">Username</label>
-             <input class="UserName" type="username" value="" />
+             <input class="UserName" type="username" value="" name="UserName" />
              <label name="password">Password</label>
-             <input class="pw" type="password" />
+             <input class="pw" type="password" name="Password" />
              <input type="submit" value="Login" id="submit-btn" />
            </fieldset>
          </form>
@@ -55,7 +55,7 @@
     
     $(document).on("submit", "#signin", signInForm);
         function updateUsers(){
-            $.get("/api/dashboard/postUser", function(){
+            $.get("/api/dashboard/user/postUser", function(){
                 console.log("signup", data);
                 signup = data;
             })
@@ -69,8 +69,8 @@
          UserName: $("input.UserName").val().trim(),
          UserPassword: $("input.pw").val().trim()
             }
-            console.log(signin);
-        $.post("/api/dashboard/user/postUser", signin, function(req, res) {
+           
+        $.post("/signin", signin, function(req, res) {
         }) 
  
         
