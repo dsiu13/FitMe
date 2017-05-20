@@ -17,20 +17,20 @@
 	<div class="dropdown">
 	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 	    FitMe
-	    <span class="caret"></span>
+	  <span class="caret"></span>
 	  </button>
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-	    <li><a href="#">My Tracker</a></li>
-	    <li><a href="#">My History</a></li>
-	  
+	    <li><a href="/goal">My Tracker</a></li>
+	    <li><a href="/history">My History</a></li>
 	    <li role="separator" class="divider"></li>
-	    <li><a href="#">Log Out</a></li>
+	    <li><a href="/logout">Log Out</a></li>
 	  </ul>
 	</div>
 		 
-		 <div id="title">Your Fitness Goal<br><small>Let's do the math</small></div>
+		 <div id="title">Your Fitness Goal<br>
+		 <small>Let's do the math</small>
+		 </div>
 
-	
 		 <div class="container col-lg-12" id="eatForms">
 		 <div class="stuff">
 		 	<div class="col-lg-12">Enter in your calories eaten:
@@ -45,41 +45,42 @@
 		 	</div>
 		 </div>
 		 </div>
+		 
 		 <div class="container col-lg-12" id="burnForms">
 		 <div class="stuff">
 		 	<div class="col-lg-12" id="calBurned">Enter in your calories burned:
 				<form id="formBurned">
 		 			<input class="form-control" type="number" value="0" id="example-number-input">
-		 		</form> <button type="button" class="btn btn-danger" id="myBtn2">Subtract from my total!</button>
+		 		</form> 
+		 		<button type="button" class="btn btn-danger" id="myBtn2">Subtract from my total!
+		 		</button>
 		 	</div>
 		 </div>
-		<div class="total">Fitness Number: <span class="total1">0</span></div>
+
+		<p>Total Fitness Number: </p>
+		<div class="total" id="numberDiv" value="0"> </div>
+
 		 </div> 
-		  <div class="row col-lg-12" id="close"><button type="button" class="btn btn-danger btn-lg">Close Out for the Day</button> </div>
+		  
+		<div class="row col-lg-12" id="close">
+		<button type="button" class="btn btn-danger btn-lg">Close Out for the Day</button> 
+		</div>
 
 		<div id="myModal" class="modal">
-
-		  <!-- Modal content -->
 			  <div class="modal-content">
 			    <span class="close">&times;</span>
 			    <p>Great work! These calories have been added to your total.</p>
 			  </div>
-
-			</div>
+		</div>
+		
 		<div id="myModal2" class="modal">
-
-		  <!-- Modal content -->
-			  <div class="modal-content">
+			<div class="modal-content">
 			    <span class="close2">&times;</span>
 			    <p>Feelin the burn! These calories were cut from your total.</p>
-			  </div>
+			 </div>
+		</div>
 
-			</div>
-
-
-
-
-<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <p class="navbar-text pull-left">© 2017 - Site Built By FitMe Team
            <a href="#" target="_blank">Learn About Us</a>
@@ -87,7 +88,7 @@
       <a href="http://facebook.com" class="navbar-btn btn-danger btn pull-right">
       <span class="glyphicon glyphicon-star"></span>  Share on Facebook</a>
     </div>
-    
+    </div>
     
 		
 

@@ -21,10 +21,18 @@ module.exports = function(app, passport) {
     ));
  
  
+
+    app.get('/dashboard', isLoggedIn, authController.dashboard);
+
+    app.get('/history', authController.history);
+
+    app.get('/goal', authController.goal);
+ 
+
     app.get('/dashboard', authController.dashboard);
     
     app.get('/my-fitness', authController.dashboard);
- 
+
  
     app.get('/logout', authController.logout);
  

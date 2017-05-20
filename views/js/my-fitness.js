@@ -9,9 +9,8 @@ $(document).ready(main);
 
 //code that takes in values from forms
 
-var calEaten = document.getElementById("calInput").value;
 var calBurn = $("#formBurned").val().trim();
-var total = document.getElementById('total');
+var total = document.getElementById('numberDiv');
 
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
@@ -22,15 +21,19 @@ var btn2 = document.getElementById("myBtn2");
 var span2 = document.getElementsByClassName("close2")[0];
 
 
+ var calEaten = document.getElementById("calInput").value;
 
-$("#myBtn").on("click", function(){
-	console.log("Button Click");
-	var caleaten = $("input.calEaten").val().trim();
-	if (caleaten > 0) {
-	console.log(caleaten);
-    $( ".total1" ).html(caleaten);
-  }
-})
+//on click adds numbers to total
+
+$("#myBtn").on('click', function(){
+    var start = [];
+    var getNumber = $("input.calEaten").val().trim();
+    var total = parseInt(getNumber);
+    start = start + total;
+    $(".total").html(start);
+    console.log(start);
+});
+
 
 $("#myBtn").on("click", function(){
     console.log("Button Click");
