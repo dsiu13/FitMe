@@ -1,4 +1,4 @@
-$(document).on("submit", "#signup", signUpForm);
+
         function updateUsers(){
             $.get("/api/dashboard/user/postUser", function(){
                 console.log("signup", data);
@@ -19,8 +19,8 @@ $(document).on("submit", "#signup", signUpForm);
 
             console.log(signup);
             $.post("/signup", signup, function(req, res) {
-            console.log(arguments)
-            console.log("Click Works");
+//             console.log(arguments)
+//             console.log("Click Works");
        		}) 
  
         
