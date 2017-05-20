@@ -23,9 +23,9 @@
           <form id="signin" name="signin" method="post" action="signin">
            <fieldset>
              <label name="username">Username</label>
-             <input class="UserName" type="username" value="" />
+             <input class="UserName" type="username" value="" name="UserName" />
              <label name="password">Password</label>
-             <input class="pw" type="password" />
+             <input class="pw" type="password" name="Password" />
              <input type="submit" value="Login" id="submit-btn" />
            </fieldset>
          </form>
@@ -53,11 +53,11 @@
 
 <script type="text/javascript">
     
-    $(document).on("submit", "#signin", signInForm);
+    $(document).on("submit", "#loginform", signInForm);
         function updateUsers(){
-            $.get("/api/dashboard/postUser", function(){
-                console.log("signup", data);
-                signup = data;
+            $.get("/api/dashboard/user/postUser", function(){
+                console.log("signin", data);
+                signin = data;
             })
         }
 
@@ -67,10 +67,10 @@
        event.preventDefault();
          var signin = {
          UserName: $("input.UserName").val().trim(),
-         UserPassword: $("input.pw").val().trim()
+         Password: $("input.pw").val().trim()
             }
-            console.log(signin);
-        $.post("/api/dashboard/user/postUser", signin, function(req, res) {
+           
+        $.post("/signin", signin, function(req, res) {
         }) 
  
         
