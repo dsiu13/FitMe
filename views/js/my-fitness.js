@@ -40,7 +40,34 @@ $("#myBtn").on('click', function(){
 });
 
 
+$("#myBtn").on("click", function(){
+    console.log("Button Click");
+    // var foodEat = $("input.calEaten");
+    // var caleaten = $("input.calEaten").val().trim();
+    // if (caleaten > 0) {
+    // console.log(caleaten);
+    getFood(CHEESE);
 
+    // $( ".total1" ).html(caleaten);
+  // }
+})
+
+function getFood(foodname) {
+    var foodString = foodname || "";
+    if (foodString) {
+      foodString = "/findOne/" + foodString;
+    }
+    $.get("/api/dashboard/food/" + foodString, function(data) {
+      console.log("Food", data);
+    //   food = data;
+    //   if (!food || !food.length) {
+    //     displayEmpty();
+    //   }
+    //   else {
+    //     initializeRows();
+    //   }
+    });
+}
 
 
 //button for adding calories
