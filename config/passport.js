@@ -1,5 +1,6 @@
 //load bcrypt
 var bCrypt = require('bcrypt-nodejs');
+var db = require("../models");
 
 module.exports = function(passport, user) {
 
@@ -128,27 +129,35 @@ module.exports = function(passport, user) {
  
         var User = user;
  
-        var isValidPassword = function(Password) {
- 
-            return bCrypt.compareSync(Password, userpass);
+        var isValidPassword = function(Password, UserPassword) {
+
+            return bCrypt.compareSync(Password, UserPassword);
  
         }
- 
-        User.findOne({
+        
+        db.User.findAll({
             where: {
                 UserName: UserName
             }
-        }).then(function(UserName) {
- 
-            if(!isValidPassword(user.UserPassword, Password)){
+        }).then(function(Password, UserPassword) {
+                
+                console.log("before if")
+                console.log(Password);
+                console.log(user.UserPassword);
 
-                return done (null, false);
 
-            } else if (isValidPassword(user.UserPassword, Password)) { 
+            if(isValidPassword(Password, user.UserPassword)){
+                console.log("after if")
+                console.log(Password);
+                console.log(user.UserPassword);
 
                 var userInfo = User.get();
 
-                return done(null, userInfo);
+                return done (null, userInfo);
+
+            } else  { 
+
+                return done(null, false);
             }
  
         }).catch(function(err){
@@ -160,5 +169,4 @@ module.exports = function(passport, user) {
     ));
 
 
- 
 }

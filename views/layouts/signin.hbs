@@ -53,11 +53,11 @@
 
 <script type="text/javascript">
     
-    $(document).on("submit", "#signin", signInForm);
+    $(document).on("submit", "#loginform", signInForm);
         function updateUsers(){
             $.get("/api/dashboard/user/postUser", function(){
-                console.log("signup", data);
-                signup = data;
+                console.log("signin", data);
+                signin = data;
             })
         }
 
@@ -67,7 +67,7 @@
        event.preventDefault();
          var signin = {
          UserName: $("input.UserName").val().trim(),
-         UserPassword: $("input.pw").val().trim()
+         Password: $("input.pw").val().trim()
             }
            
         $.post("/signin", signin, function(req, res) {
