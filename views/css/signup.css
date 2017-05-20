@@ -1,64 +1,146 @@
-strong {font-family: 'Poppins', sans-serif;}
-input[type=text] {
-border-style: solid;
-border-color: #ef5350;
-border-width: 2px;
-}
 
+strong 
+{		 font-family: 'Poppins', sans-serif;}
+		 input[type=text] {
+		 border-style: solid;
+
+}
 .w3-container {
-    text-align: center; 
+		text-align: center; 
 }
-
 .lead {
-    text-align: center;
+		text-align: center;
 }
 
-p {font-family: 'Poppins', sans-serif; }
-    
-font, option {font-family: 'Poppins', sans-serif; color: #ef5350;}
-                
+p {
+	font-family: 'Poppins', sans-serif; color: #ef5350;
+}
+				
 .jumbotron { 
-float: center; 
-background-color: white; 
-height: 50%; 
-width: 100%; 
-border-style: solid; 
-border-width: 10px; 
-border-color: #ef5350;
-}
-
+	float: center; 
+	background-color: white; 
+	height: 50%; width: 100%; 
+	border-style: solid; 
+	border-width: 10px; 
+	border-color: #ef5350; 
+	
+	 }
 
 div { 
-width: 100%; 
-float: center;
+	width: 100%; float: center;
 }
 
 h5{
-color: #ef5350;
+	color: #ef5350;
 }
-            
+			
 img {
-float: right;  
-width: 200px;
-height: 100px;  
-/* Rotate div */
--ms-transform: rotate(90deg); /* IE 9 */
--webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-transform: rotate(90deg);
+	float: right;  width: 200px;
+	height: 100px; 
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);  	
+	transform: rotate(90deg);
 }
-
-.w3-btn {
-width:60%; 
-color: white; 
+.pw {
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left: 
+	margin-top: 10px;
+}
+.height {
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	margin-left:;
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left:
+	margin-top: 10px;
+}
+.cWeight {
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	margin-left:;
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left: 
+	margin-top: 10px;
+}
+.gWeight{
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	margin-left: ;
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left: 
+	margin-top: 10px;
+}
+.UserName {
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	margin-left: ;
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left: 
+	margin-top: 10px;
+}
+.name{
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	margin-left: ;
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left:
+	margin-top: 10px;
+	text-align: center;
+}
+.gender {
+	font-family: 'Poppins', sans-serif;
+	width: 45%; 
+	border-style: solid;
+	border-color: #ef5350;
+	border-width: 1px;
+	border-radius: 5px;
+	margin-left: ;
+	margin-top: 10px;
+}
+#signupSub {
+margin-top: 10px;
+width:45%; color: white; 
 background-color: #ef5350;  
-}
-.form-group{
-font-family: 'Poppins', sans-serif;
-width: 60%; 
-margin-left: 20%;
 }
 
 .habits {
-    text-align: center;
-    float: center;
+	text-align: center;
+	float: center;
+	font-family: 'Poppins', sans-serif;
+	font-size: 18px;
+
+
 }
+.container {
+	font-family: 'Poppins', sans-serif;
+	width: 60%; 
+	margin-left: 20%;
+}
+#signup {
+	margin-left: 30%;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+}
+
+
+		
