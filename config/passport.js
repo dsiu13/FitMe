@@ -24,9 +24,10 @@ module.exports = function(passport, user) {
  
         function(req, UserName, UserPassword, done) {
  
-            var generateHash = function(UserPassword) {
- 
-                return bCrypt.hashSync(UserPassword, secret, null);
+            var generateHash = function(Password) {
+
+                return bCrypt.hashSync(Password, bCrypt.genSaltSync(8), null);
+
  
             };
  
@@ -48,7 +49,6 @@ module.exports = function(passport, user) {
                 } else
  
                 {
-
                     var newUserPassword = generateHash(UserPassword);
  
                     var data =
@@ -60,11 +60,12 @@ module.exports = function(passport, user) {
  
                             Height: req.body.height,
  
-                            CurrentWeight: req.body.cWeight,
 
-                            GoalWeight: req.body.gWeight
- 
-                        };
+                            cWeight: req.body.cWeight,
+
+                            gWeight: req.body.gWeight
+
+                        };          
  
                     User.create(data).then(function(newUser, created) {
  
