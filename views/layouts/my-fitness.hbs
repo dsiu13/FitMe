@@ -37,10 +37,10 @@
 		 		<form id="calInput">
 		 			<input class="form-control calEaten" type="number" value="0">
 		 		</form>  <small> or</small>
-		 		<form id="calInput">
-		 			<input class="form-control" type="text" value="Enter Food" id="example-number-input">
+		 		<form id="calInput1">
+		 			<input class="form-control foodEaten" type="text" value="Enter Food" id="example-number-input">
 		 		</form>
-		 		<button type="button" class="btn btn-danger" id="myBtn"> Add to my total!
+		 		<button type="submit" class="btn btn-danger" id="myBtn"> Add to my total!
 		 		</button>
 		 	</div>
 		 </div>
@@ -56,10 +56,16 @@
 		 		</button>
 		 	</div>
 		 </div>
-
-		<p>Total Fitness Number: </p>
-		<div class="total" id="numberDiv" value="0"> </div>
-
+		<div class ="total">
+		<p>Fitness Numbers:  
+		<span class="totalGain" id="numberDiv" value="0">0</span>
+		<span> / </span>
+		<span class="totallost" id="numberDiv" value="0">0</span>
+		</p>
+		<p>Total: <span class="actualTotal" id="numberDiv" value="0">0</span></p>
+		
+	
+		</div>
 		 </div> 
 		  
 		<div class="row col-lg-12" id="close">

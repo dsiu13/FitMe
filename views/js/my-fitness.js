@@ -22,47 +22,59 @@ var span2 = document.getElementsByClassName("close2")[0];
 
 
  var calEaten = document.getElementById("calInput").value;
+ var foodEaten = document.getElementById("calInput1").value;
 
 //on click adds numbers to total
 
 $("#myBtn").on('click', function(){
+
     var start = [];
     var getNumber = $("input.calEaten").val().trim();
     var total = parseInt(getNumber);
     start = start + total;
-    $(".total").html(start);
+    $(".totalGain").html(start);
     console.log(start);
 });
 
 
 $("#myBtn").on("click", function(){
-    console.log("Button Click");
-    // var foodEat = $("input.calEaten");
-    // var caleaten = $("input.calEaten").val().trim();
-    // if (caleaten > 0) {
-    // console.log(caleaten);
-    getFood(CHEESE);
+    // console.log("Button Click");
+    var foodname = $("input.foodEaten").val().trim();
+    console.log(foodname);
+    $.get("/api/dashboard/food/findOne/"+foodname, function(data) {
+    var foodData = data[0].FoodCalorieGain;
+    $(".totalGain").html(foodData);
 
-    // $( ".total1" ).html(caleaten);
-  // }
-})
+});
+});    
 
-function getFood(foodname) {
-    var foodString = foodname || "";
-    if (foodString) {
-      foodString = "/findOne/" + foodString;
-    }
-    $.get("/api/dashboard/food/" + foodString, function(data) {
-      console.log("Food", data);
-    //   food = data;
-    //   if (!food || !food.length) {
-    //     displayEmpty();
-    //   }
-    //   else {
-    //     initializeRows();
-    //   }
-    });
-}
+$("#myBtn2").on('click', function(){
+
+    var start = [];
+    var getNumber = $("input.calBurned").val().trim();
+    var total = parseInt(getNumber);
+    start = start + total;
+    $(".totalLost").html(start);
+    console.log(start);
+});
+
+
+$("#myBtn").on("click", function(){
+    // console.log("Button Click");
+    var foodname = $("input.foodEaten").val().trim();
+    console.log(foodname);
+    $.get("/api/dashboard/food/findOne/"+foodname, function(data) {
+    var foodData = data[0].FoodCalorieGain;
+    $(".totalGain").html(foodData);
+
+});
+}); 
+
+function getFood(foodname, res) {
+    $.get("/api/dashboard/food/findOne/", function(data) {
+      console.log(data);
+});
+};    
 
 
 //button for adding calories
@@ -97,7 +109,7 @@ window.onclick = function(event) {
     if (event.target == modal2) {
         modal.style.display = "none";
     }
-}
+};
 
-
+  
 
