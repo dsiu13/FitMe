@@ -18,37 +18,42 @@ module.exports = function(app) {
 
   console.log('working!');
 
-  //api call that searched the database based on the exercise name.  
+  // api call that searches the database based on the exercise name. 
   app.get("/api/dashboard/exercise/findOne/:exercise", function(req, res) {
-    db.Exercise.findOne({
-      where: {
-        ExerciseName: req.params.ExerciseName
-      }
-    }).then(function(cb) {
-      res.json(cb);
-    });
+    if (req.params.exercise) {
+      db.Exercise.findAll({
+        where: {
+          ExerciseName: req.params.exercise
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
   });
-
   // api call that searches the database based on the food name. 
   app.get("/api/dashboard/food/findOne/:food", function(req, res) {
-    db.Food.findOne({
-      where: {
-        FoodName: req.params.FoodName
-      }
-    }).then(function(cb) {
-      res.json(cb);
-    });
+    if (req.params.food) {
+      db.Food.findAll({
+        where: {
+          FoodName: req.params.food
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
   });
 
-  // api call that searches the database based on user name. 
+    // api call that searches the database based on user name. 
   app.get("/api/dashboard/user/findOne/:name", function(req, res) {
-    db.Users.findOne({
-      where: {
-        UserName: req.params.UserName
-      }
-    }).then(function(cb) {
-      res.json(cb);
-    });
+    if (req.params.user) {
+      db.Users.findAll({
+        where: {
+          UserName: req.params.user
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
   });
 
   // api call that searches the food database and returns all foods. 
@@ -69,13 +74,14 @@ module.exports = function(app) {
 
   // api call that searches the database and returns all users. 
   app.get("/api/dashboard/user/userall", function(req, res) {
-     db.User.findAll({}).then(function(cb) {
+     db.Users.findAll({}).then(function(cb) {
       res.json(cb);
      })
   });
 
-  // POST route for saving a new exercise.
+  // // POST route for saving a new exercise.
   app.post("/api/dashboard/exercise/postExercise", function(req, res) { 
+    console.log("post exercise is working");
    db.Exercise.create({
       ExerciseName: req.body.ExerciseName,
       ExerciseDescription: req.body.ExerciseDescription,
@@ -85,8 +91,9 @@ module.exports = function(app) {
     });
   });
 
-   // POST route for saving a new food.
-  app.post("/api/dashboard/food/postFood", function(req, res) { 
+  //  // POST route for saving a new food.
+  app.post("/api/dashboard/food/postFood", function(req, res) {
+  console.log("post food is working");
    db.Food.create({
       FoodName: req.body.FoodName,
       FoodDescription: req.body.FoodDescription,
@@ -96,9 +103,11 @@ module.exports = function(app) {
     });
   });
 
+
+
   // POST route for saving a new user.
   app.post("/api/dashboard/user/postUser", function(req, res) { 
-   db.User.create({
+   db.Users.create({
       UserName: req.body.UserName,
       UserPassword: req.body.UserPassword,
       Height: req.body.Height,
@@ -110,6 +119,20 @@ module.exports = function(app) {
       res.json(cb);
     });
   });
+
+  // app.post("/api/dashboard/user/postUser", function(req, res) { 
+  //  db.Users.create({
+  //     UserName: "Chris",
+  //     UserPassword: "hgtr",
+  //     Height: 44,
+  //     CurrentWeight: 157,
+  //     GoalWeight: 150,
+  //     DailyCalorieGain: 0,
+  //     DailyCalorieLost: 0
+  //   }).then(function(cb) {
+  //     console.log(cb);
+  //   });
+  // });
 
 };
 

@@ -19,6 +19,13 @@ exports.dashboard = function(req, res) {
  
 }
 
+ 
+exports.dashboard = function(req, res) {
+ 
+    res.render('my-fitness');
+ 
+}
+
 exports.logout = function(req, res) {
  
     req.session.destroy(function(err) {
@@ -27,4 +34,14 @@ exports.logout = function(req, res) {
  
     });
  
+}
+
+exports.history = function(req, res) {
+
+	res.render('fit-past');
+}
+
+exports.goal = function(req, res) {
+
+	res.render('my-fitness');
 }

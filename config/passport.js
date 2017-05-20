@@ -42,8 +42,9 @@ module.exports = function(passport, user) {
         function(req, UserName, UserPassword, done) {
  
             var generateHash = function(UserPassword) {
- 
-                return bCrypt.hashSync(UserPassword, secret, null);
+
+                return bCrypt.hashSync(UserPassword, bCrypt.genSaltSync(8), null);
+
  
             };
  
@@ -65,7 +66,6 @@ module.exports = function(passport, user) {
                 } else
  
                 {
-
                     var newUserPassword = generateHash(UserPassword);
  
                     var data =
@@ -80,8 +80,8 @@ module.exports = function(passport, user) {
                             CurrentWeight: req.body.cWeight,
 
                             GoalWeight: req.body.gWeight
- 
-                        };
+
+                        };          
  
                     User.create(data).then(function(newUser, created) {
  

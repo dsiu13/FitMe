@@ -48,6 +48,7 @@ body {
 		height: 100px;
 		margin-bottom: 60px;
 }
+
 #burnForms {
 	
 		display: inline-block;
@@ -83,7 +84,7 @@ form {
 		padding-top: 30px;
 		padding-left: 40px;
 }
-.total {
+p {
 		margin-top: 30px;
 		margin-bottom: 50px;
 		padding-top: 10px;
@@ -103,7 +104,7 @@ form {
     
 }
 #close {
-	margin-top: 200px;
+	margin-top: 220px;
 	padding-bottom: 100px;
 	margin-left: 42%;
 	font-size: 45px;
@@ -169,3 +170,6 @@ form {
     cursor: pointer;
 }
 
+.total {
+	text-align: center;
+}

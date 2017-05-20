@@ -1,4 +1,4 @@
-insert into fitme.Exercise (ExerciseName, ExerciseDescription, ExerciseCaloriesLost)
+insert into fitme.Exercises (ExerciseName, ExerciseDescription, ExerciseCaloriesLost)
 values 
 ("Aerobics", "High Impact Aerobics", 553),
 ("Walking", "Walking, 2 mph", 204),
