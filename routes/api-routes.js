@@ -56,6 +56,7 @@ module.exports = function(app) {
     }
   });
 
+
   // api call that searches the food database and returns all foods. 
   app.get("/api/dashboard/food/foodall", function(req, res) {
      db.Food.findAll({}).then(function(cb) {
@@ -103,6 +104,17 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/dashboard/food/calories", function(req, res) {
+  console.log("post food is working");
+   db.Food.create({
+      FoodName: req.body.FoodName,
+      FoodDescription: req.body.FoodDescription,
+      FoodCalorieGain: req.body.FoodCalorieGain
+    }).then(function(cb) {
+      res.json(cb);
+    });
+  });
+
 
 
   // POST route for saving a new user.
@@ -119,6 +131,18 @@ module.exports = function(app) {
       res.json(cb);
     });
   });
+
+  app.post("/api/dashboard/user/caloriesIn/:calories", function(req, res) {
+    db.Users.update({
+      DailyCalorieGain: req.body.DailyCalorieGain 
+      },{
+        where: {UserName: currentUser}
+    }).then(function(cb) {
+      console.log("update works!");
+      res.json(cb);
+    });
+  });
+
 
   // app.post("/api/dashboard/user/postUser", function(req, res) { 
   //  db.Users.create({

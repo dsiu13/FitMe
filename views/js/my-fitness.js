@@ -11,6 +11,8 @@ $(document).ready(main);
 
 
 
+var total = document.getElementById('numberDiv');
+
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
@@ -25,49 +27,97 @@ var span3 = document.getElementsByClassName('close3')[0];
 
 
 var calEaten = document.getElementById("calInput").value;
+var foodEaten = document.getElementById("calInput1").value;
+
+var calBurned1 = document.getElementById("formBurned").value;
+var exercises = document.getElementById("formBurned1").value;
+
+// var calBurn = $("#formBurned").val().trim();
+
+
+ var currentUser = "chris";
+
+ // var gainedCalories = [];
+ var gainedCalories = [].reduce(add, 0);
+ function add(a, b) {
+   return a + b;
+ }
+ 
+
+ var lostCalories = [];
+
+
+var calEaten = document.getElementById("calInput").value;
 var calBurn = $("#formBurned").val().trim();
 var total = document.getElementById('numberDiv');
+
 
 //on click adds numbers to total
 
 $("#myBtn").on('click', function(){
+    var cal = gainedCalories;
     var start = [];
     var getNumber = $("input.calEaten").val().trim();
     var total = parseInt(getNumber);
     start = start + total;
-    $(".total").html(start);
+    cal.push(start);
     console.log(start);
+    $(".totalGain").html(gainedCalories);
+
 });
 
 
 $("#myBtn").on("click", function(){
-    console.log("Button Click");
-    // var foodEat = $("input.calEaten");
-    // var caleaten = $("input.calEaten").val().trim();
-    // if (caleaten > 0) {
-    // console.log(caleaten);
-    getFood(CHEESE);
+    var foodname = $("input.foodEaten").val().trim();
+    console.log(foodname);
+  $.get("/api/dashboard/food/findOne/"+foodname, function(data) {
+    var foodData = data[0].FoodCalorieGain;
+    console.log(foodData);
+    $(".totalGain").html(foodData);
 
-    // $( ".total1" ).html(caleaten);
-  // }
-})
-
-function getFood(foodname) {
-    var foodString = foodname || "";
-    if (foodString) {
-      foodString = "/findOne/" + foodString;
-    }
-    $.get("/api/dashboard/food/" + foodString, function(data) {
-      console.log("Food", data);
-    //   food = data;
-    //   if (!food || !food.length) {
-    //     displayEmpty();
-    //   }
-    //   else {
-    //     initializeRows();
-    //   }
+    // foodData = calories;
+    // }).then(function() {
+    // $.post("/api/dashboard/user/caloriesIn/"+calories, function(data) {
+    //     console.log(data);
     });
-}
+    // });  
+
+    // $(".totalGain").html(foodData);
+  });
+   
+   
+
+$("#myBtn2").on('click', function(){
+
+    var start = [];
+    var getNumber = $("input.calBurned1").val().trim();
+    console.log(getNumber);
+    var total = parseInt(getNumber);
+    start = start + total;
+    $(".totalLost").html(start);
+    console.log(start);
+});
+
+
+$("#myBtn2").on("click", function(){
+    // console.log("Button Click");
+    var exerciseName = $("input.exercises").val().trim();
+    console.log(exerciseName);
+    $.get("/api/dashboard/exercise/findOne/"+exerciseName, function(data) {
+    var exerciseData = data[0].ExerciseCaloriesLost;
+    $(".totalLost").html(exerciseData);
+    })
+}); 
+
+function getFood(foodname, res) {
+    $.get("/api/dashboard/food/findOne/", function(data) {
+      console.log(data);
+});
+}; 
+
+function sumTotal() {
+    gainedCalories - lostCalories;
+}   
 
 
 //button for adding calories
@@ -102,6 +152,9 @@ window.onclick = function(event) {
     if (event.target == modal2) {
         modal.style.display = "none";
     }
+
+};
+
 }
 //close out button
 
@@ -125,5 +178,6 @@ function total() {
 
 
 
+  
 
 $(".numberDiv").

@@ -37,10 +37,10 @@
 		 		<form id="calInput">
 		 			<input class="form-control calEaten" type="number" value="0">
 		 		</form>  <small> or</small>
-		 		<form id="calInput">
-		 			<input class="form-control" type="text" value="Enter Food" id="example-number-input">
+		 		<form id="calInput1">
+		 			<input class="form-control foodEaten" type="text" value="Enter Food" id="example-number-input">
 		 		</form>
-		 		<button type="button" class="btn btn-danger" id="myBtn"> Add to my total!
+		 		<button type="submit" class="btn btn-danger" id="myBtn"> Add to my total!
 		 		</button>
 		 	</div>
 		 </div>
@@ -50,16 +50,25 @@
 		 <div class="stuff">
 		 	<div class="col-lg-12" id="calBurned">Enter in your calories burned:
 				<form id="formBurned">
-		 			<input class="form-control" type="number" value="0" id="example-number-input">
+		 			<input class="form-control calBurned1" type="number" value="0" id="example-number-input">
 		 		</form> 
+		 		<form id="formBurned1">
+		 			<input class="form-control exercises" type="text" value="Enter Exercise" id="example-number-input">
+		 		</form>
 		 		<button type="button" class="btn btn-danger" id="myBtn2">Subtract from my total!
 		 		</button>
 		 	</div>
 		 </div>
-
-		<p>Total Fitness Number: </p>
-		<div class="total" id="numberDiv" value="0"> </div>
-
+		<div class ="total">
+		<p>Fitness Numbers:  
+		<span class="totalGain" id="numberDiv" value="0">0</span>
+		<span> / </span>
+		<span class="totalLost" id="numberDiv" value="0">0</span>
+		</p>
+		<p>Total: <span class="actualTotal" id="numberDiv" value="0">0</span></p>
+		
+	
+		</div>
 		 </div> 
 		  
 		<div class="row col-lg-12" id="close">
