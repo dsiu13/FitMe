@@ -14,7 +14,7 @@ module.exports = function(passport, user) {
  
             usernameField: 'UserName',
  
-            passwordField: 'UserPassword',
+            passwordField: 'Password',
  
             passReqToCallback: true // allows us to pass back the entire request to the callback
  
@@ -24,9 +24,9 @@ module.exports = function(passport, user) {
  
         function(req, UserName, UserPassword, done) {
  
-            var generateHash = function(UserPassword) {
+            var generateHash = function(Password) {
  
-                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+                return bCrypt.hashSync(Password, bCrypt.genSaltSync(8), null);
  
             };
  
@@ -49,7 +49,7 @@ module.exports = function(passport, user) {
  
                 {
  
-                    var newUserPassword = generateHash(password);
+                    var newUserPassword = generateHash(UserPassword);
  
                     var data =
  
@@ -58,13 +58,13 @@ module.exports = function(passport, user) {
  
                             UserPassword: newUserPassword,
  
-                            Height: req.body.Height,
+                            Height: req.body.height,
  
-                            CurrentWeight: req.body.CurrentWeight,
+                            cWeight: req.body.cWeight,
 
-                            GoalWeight: req.body.GoalWeight
+                            gWeight: req.body.gWeight
  
-                        };
+                        };          
  
                     User.create(data).then(function(newUser, created) {
  
