@@ -25,6 +25,26 @@ $(document).mouseup(function (e)
 });
 
 
+    
+    // $(document).on("submit", "#loginform", signInForm);
+    //     function updateUsers(){
+    //         $.get("/api/dashboard/user/postUser", function(){
+    //             console.log("signin", data);
+    //             signin = data;
+    //         })
+    //     }
 
-
-
+    //     function signInForm(){
+    //         console.log("on click sub works")
+       
+    //    event.preventDefault();
+    //      var signin = {
+    //      UserName: $("input.UserName").val().trim(),
+    //      Password: $("input.pw").val().trim()
+    //         }
+           
+    //     $.post("/signin", signin, function(req, res) {
+    //     }) 
+ 
+        
+    // };

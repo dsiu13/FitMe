@@ -10,7 +10,7 @@
 var authController = require('../controllers/authcontroller.js');
 var passport = require('passport');
 var db = require("../models");
-// var sequelizeHandlers = require('sequelize-handlers');
+
 
 // Routes
 // =============================================================
