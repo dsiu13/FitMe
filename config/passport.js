@@ -6,7 +6,7 @@ module.exports = function(passport, user) {
 
     var User = user;
     var LocalStrategy = require('passport-local').Strategy;
- 
+    var secret = bCrypt.genSaltSync(8)
   
     passport.use('local-signup', new LocalStrategy(
  
@@ -14,7 +14,7 @@ module.exports = function(passport, user) {
  
             usernameField: 'UserName',
  
-            passwordField: 'UserPassword',
+            passwordField: 'Password',
  
             passReqToCallback: true // allows us to pass back the entire request to the callback
  
@@ -26,7 +26,7 @@ module.exports = function(passport, user) {
  
             var generateHash = function(UserPassword) {
  
-                return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
+                return bCrypt.hashSync(UserPassword, secret, null);
  
             };
  
@@ -48,8 +48,8 @@ module.exports = function(passport, user) {
                 } else
  
                 {
- 
-                    var newUserPassword = generateHash(password);
+
+                    var newUserPassword = generateHash(UserPassword);
  
                     var data =
  
@@ -58,11 +58,11 @@ module.exports = function(passport, user) {
  
                             UserPassword: newUserPassword,
  
-                            Height: req.body.Height,
+                            Height: req.body.height,
  
-                            CurrentWeight: req.body.CurrentWeight,
+                            CurrentWeight: req.body.cWeight,
 
-                            GoalWeight: req.body.GoalWeight
+                            GoalWeight: req.body.gWeight
  
                         };
  
@@ -111,9 +111,9 @@ module.exports = function(passport, user) {
  
         var User = user;
  
-        var isValidPassword = function(userpass, UserPassword) {
+        var isValidPassword = function(UserPassword) {
  
-            return bCrypt.compareSync(password, userpass);
+            return bCrypt.compareSync(UserPassword, secret);
  
         }
  

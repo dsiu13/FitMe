@@ -6,63 +6,133 @@
 // =============================================================
 
 // Requiring our models
+
+var authController = require('../controllers/authcontroller.js');
+var passport = require('passport');
 var db = require("../models");
+// var sequelizeHandlers = require('sequelize-handlers');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
-  app.get("/api/todos", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Todo.findAll({}).then(function(dbTodo) {
-      // We have access to the todos as an argument inside of the callback function
-      res.json(dbTodo);
+  console.log('working!');
+
+  // api call that searches the database based on the exercise name. 
+  app.get("/api/dashboard/exercise/findOne/:exercise", function(req, res) {
+    if (req.params.exercise) {
+      db.Exercise.findAll({
+        where: {
+          ExerciseName: req.params.exercise
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
+  });
+  // api call that searches the database based on the food name. 
+  app.get("/api/dashboard/food/findOne/:food", function(req, res) {
+    if (req.params.food) {
+      db.Food.findAll({
+        where: {
+          FoodName: req.params.food
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
+  });
+
+    // api call that searches the database based on user name. 
+  app.get("/api/dashboard/user/findOne/:name", function(req, res) {
+    if (req.params.user) {
+      db.Users.findAll({
+        where: {
+          UserName: req.params.user
+        }
+      }).then(function(cb) {
+        res.json(cb);
+      })
+    }
+  });
+
+  // api call that searches the food database and returns all foods. 
+  app.get("/api/dashboard/food/foodall", function(req, res) {
+     db.Food.findAll({}).then(function(cb) {
+      console.log('food get all is working');
+      res.json(cb);
+     })
+  });
+
+  // api call that searched the exercise database and returns exercises. 
+  app.get("/api/dashboard/exercise/exerciseall", function(req, res) {
+     db.Exercise.findAll({}).then(function(cb) {
+      console.log("exercise all is working");
+      res.json(cb);
+     })
+  });
+
+  // api call that searches the database and returns all users. 
+  app.get("/api/dashboard/user/userall", function(req, res) {
+     db.Users.findAll({}).then(function(cb) {
+      res.json(cb);
+     })
+  });
+
+  // // POST route for saving a new exercise.
+  app.post("/api/dashboard/exercise/postExercise", function(req, res) { 
+    console.log("post exercise is working");
+   db.Exercise.create({
+      ExerciseName: req.body.ExerciseName,
+      ExerciseDescription: req.body.ExerciseDescription,
+      ExerciseCaloriesLost: req.body.ExerciseCalorieslost
+    }).then(function(cb) {
+      res.json(cb);
     });
   });
 
-  // POST route for saving a new todo
-  app.post("/api/todos", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.Todo.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(function(dbTodo) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbTodo);
+  //  // POST route for saving a new food.
+  app.post("/api/dashboard/food/postFood", function(req, res) {
+  console.log("post food is working");
+   db.Food.create({
+      FoodName: req.body.FoodName,
+      FoodDescription: req.body.FoodDescription,
+      FoodCalorieGain: req.body.FoodCalorieGain
+    }).then(function(cb) {
+      res.json(cb);
     });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo to be deleted from
-  // req.params.id
-  app.delete("/api/todos/:id", function(req, res) {
-    // We just have to specify which todo we want to destroy with "where"
-    db.Todo.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbTodo) {
-      res.json(dbTodo);
-    });
 
-  });
 
-  // PUT route for updating todos. We can get the updated todo data from req.body
-  app.put("/api/todos", function(req, res) {
-
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.Todo.update({
-      text: req.body.text,
-      complete: req.body.complete
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(dbTodo) {
-      res.json(dbTodo);
+  // POST route for saving a new user.
+  app.post("/api/dashboard/user/postUser", function(req, res) { 
+   db.Users.create({
+      UserName: req.body.UserName,
+      UserPassword: req.body.UserPassword,
+      Height: req.body.Height,
+      CurrentWeight: req.body.CurrentWeight,
+      GoalWeight: req.body.GoalWeight,
+      DailyCalorieGain: req.body.DailyCalorieGain,
+      DailyCalorieLost: req.body.DailyCalorieLost
+    }).then(function(cb) {
+      res.json(cb);
     });
   });
+
+  // app.post("/api/dashboard/user/postUser", function(req, res) { 
+  //  db.Users.create({
+  //     UserName: "Chris",
+  //     UserPassword: "hgtr",
+  //     Height: 44,
+  //     CurrentWeight: 157,
+  //     GoalWeight: 150,
+  //     DailyCalorieGain: 0,
+  //     DailyCalorieLost: 0
+  //   }).then(function(cb) {
+  //     console.log(cb);
+  //   });
+  // });
+
 };
+
