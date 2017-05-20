@@ -138,7 +138,7 @@ module.exports = function(passport, user) {
             return bCrypt.hashSync(Password, bCrypt.genSaltSync(8), null);
         }
 
-        var secret = compareHash(Password);
+        
         
 
         User.findAll({
@@ -150,6 +150,7 @@ module.exports = function(passport, user) {
                 console.log("before if")
 
                 var userpass = Password[0].dataValues.UserPassword
+                var secret = compareHash(Password);
 
             if(isValidPassword(userpass, secret)){
                 
