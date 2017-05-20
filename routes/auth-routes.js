@@ -20,16 +20,11 @@ module.exports = function(app, passport) {
  
     ));
  
- 
-
-    app.get('/dashboard', isLoggedIn, authController.dashboard);
 
     app.get('/history', authController.history);
 
     app.get('/goal', authController.goal);
  
-
-    app.get('/dashboard', authController.dashboard);
     
     app.get('/my-fitness', authController.dashboard);
 
@@ -38,7 +33,7 @@ module.exports = function(app, passport) {
  
  
     app.post('/signin', passport.authenticate('local-signin', {
-            successRedirect: '/dashboard',
+            successRedirect: '/my-fitness',
  
             failureRedirect: '/signin'
         }

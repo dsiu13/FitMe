@@ -125,30 +125,35 @@ module.exports = function(passport, user) {
  
  
     function(req, UserName, Password, done) {
- 
-        var User = user;
- 
-        var isValidPassword = function(Password, UserPassword) {
-
-            return bCrypt.compareSync(Password, UserPassword);
- 
-        }
         
-        db.User.findAll({
+        var User = user;
+
+        var isValidPassword = function(Password, userpass) {
+
+            return bCrypt.compareSync(Password, userpass);
+        }
+
+        var compareHash = function(Password) {
+
+            return bCrypt.hashSync(Password, bCrypt.genSaltSync(8), null);
+        }
+
+        var secret = compareHash(Password);
+        
+
+        User.findAll({
             where: {
                 UserName: UserName
             }
-        }).then(function(Password, UserPassword) {
+        }).then(function(Password) {
                 
                 console.log("before if")
-                console.log(Password);
-                console.log(user.UserPassword);
 
+                var userpass = Password[0].dataValues.UserPassword
 
-            if(isValidPassword(Password, user.UserPassword)){
+            if(isValidPassword(userpass, secret)){
+                
                 console.log("after if")
-                console.log(Password);
-                console.log(user.UserPassword);
 
                 var userInfo = User.get();
 
