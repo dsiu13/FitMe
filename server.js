@@ -35,10 +35,8 @@ app.set('view engine', '.hbs');
 // Requiring our models for syncing
 var db = require("./models");
 
-
 //Routing
 require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
 
 // POST Method
 app.use(methodOverride("_method"));
@@ -54,6 +52,5 @@ db.sequelize.sync({}).then(function() {
     console.log("App listening on PORT " + PORT);
   })
 }).catch(function(err){
-    console.log("Database Update Failed")
+    console.log("Connection Failed: " + err);
 });
-
