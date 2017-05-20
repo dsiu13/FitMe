@@ -13,7 +13,7 @@ module.exports = function(app, passport) {
  
  
     app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect: '/dashboard',
+            successRedirect: '/my-fitness',
  
             failureRedirect: '/signup'
         }
@@ -22,14 +22,10 @@ module.exports = function(app, passport) {
  
  
 
-    app.get('/dashboard', isLoggedIn, authController.dashboard);
-
     app.get('/history', authController.history);
 
     app.get('/goal', authController.goal);
  
-
-    app.get('/dashboard', authController.dashboard);
     
     app.get('/my-fitness', authController.dashboard);
 

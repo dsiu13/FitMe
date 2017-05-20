@@ -44,15 +44,11 @@ var exercises = document.getElementById("formBurned1").value;
 //on click adds numbers to total
 
 $("#myBtn").on('click', function(){
-    var cal = gainedCalories;
-    var start = [];
     var getNumber = $("input.calEaten").val().trim();
     var total = parseInt(getNumber);
-    start = start + total;
-    cal.push(start);
-    console.log(start);
-    $(".totalGain").html(gainedCalories);
-
+    console.log(total);
+    // gainedCalories.(total);
+    $(".totalGain").html(total);
 });
 
 
@@ -108,6 +104,15 @@ function sumTotal() {
     gainedCalories - lostCalories;
 }   
 
+var addDiv = $(".totalGain").value;
+var subDiv = $(".totallost").value;
+
+$("#myBtn3").on('click', function(){
+   var closeOut = addDiv - subDiv;
+   $(".actualTotal").append(closeOut);
+   console.log(closeOut);
+
+})
 
 //button for adding calories
 

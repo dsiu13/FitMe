@@ -5,62 +5,95 @@
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<head><link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+<title>FitMe | Sign Up</title>
 </head>
- 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <body>
 
-    <form id="signup" name="signup" method="post" action="/signup">
+<div class="jumbotron">
+
+<div class="w3-container">
+<p><font size="30" class="w3-animate-fading">Welcome!</font></p> 
+</div>
+    <p class="lead">In order to assist you on your fitness journey, we'll need some info below
+    </p>
+<hr class="my-4">
+
+
+<form id="signup" name="signup" method="post" action="/signup">
     <ul>
-        <label for="UserName">User Name</label>
+        <label for="name">Full Name</label> <br>
+            <input type="text" class="name" id="name" placeholder="Enter your full name here">
+        <br>
+        
+        <form id="multiselectForm" method="post" class="form-horizontal">
+        <label for="gender">Gender</label><br>
+                <select class="gender" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                </select>
+        </form>
+        <br>
+
+        <label for="UserName">User Name</label><br>
         <input class="UserName" name="UserName" type="text" />
+        <br>
 
-        <label for="Password">Password</label>
+        <label for="Password">Password</label><br>
         <input class="pw" name="Password" type="password" />
+        <br>
 
-        <label for="height">Height</label>
+        <label for="height">Height</label> <br>
         <input class="height" name="height" type="text" />
+        <br>
 
-        <label for="cWeight">Current Weight</label>
+        <label for="cWeight">Current Weight</label><br>
         <input class="cWeight" name="cWeight" type="text" />
+        <br>
 
-        <label for="gWeight">Goal Weight</label>
+        <label for="gWeight">Goal Weight</label><br>
         <input class="gWeight" name="gWeight" type="text" />
-   
-        <input class="btn" type="submit" value="Sign Up" id="signupSub" />
+        <br>
+
+        <input class="btn" type="submit" value="Lets Get Started" id="signupSub" />
+        <br>
      <ul>
+
     </form>
 
 
-    <script type="text/javascript">
-    $(document).on("submit", "#signup", signUpForm);
-        function updateUsers(){
-            $.get("/api/dashboard/user/postUser", function(){
-                console.log("signup", data);
-                signup = data;
-            })
-        }
-        function signUpForm(){
-            console.log("on click sub works")
-       
-       event.preventDefault();
-         var signup = {
-         UserName: $("input.UserName").val().trim(),
-         Password: $("input.pw").val().trim(),
-         height: $("input.height").val().trim(),
-         cWeight: $("input.cWeight").val().trim(),
-         gWeight: $("input.gWeight").val().trim()
-         }
 
-            console.log(signup);
-            $.post("/signup", signup, function(req, res) {
-            console.log(arguments)
-       		}) 
- 
-        
-    };
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+   <div class="container">
+     <p class="navbar-text pull-left">© 2017 - Site Built By FitMe Team
+     <a href="#" target="_blank" >Learn About Us</a>
+     </p>
+     <a href="http://facebook.com" class="navbar-btn btn-danger btn pull-right">
+     <span class="glyphicon glyphicon-star"></span>  Share on Facebook</a>
+   </div>   
+</div>
+</div>
+</div>
+
+         
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+<script src="./js/signup.js"></script>
+
+
     
-    </script>
- 
+
 </body>
  
 </html>
