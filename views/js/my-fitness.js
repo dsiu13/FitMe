@@ -54,12 +54,12 @@ $("#myBtn").on("click", function(){
     var foodData = data[0].FoodCalorieGain;
     console.log(foodData);
     $(".totalGain").html(foodData);
-    foodData = calories;
-    }).then(function() {
-    $.post("/api/dashboard/user/caloriesIn/"+calories, function(data) {
-        console.log(data);
+    // foodData = calories;
+    // }).then(function() {
+    // $.post("/api/dashboard/user/caloriesIn/"+calories, function(data) {
+    //     console.log(data);
     });
-    });  
+    // });  
 
     // $(".totalGain").html(foodData);
   });
@@ -78,19 +78,15 @@ $("#myBtn2").on('click', function(){
 });
 
 
-// $("#myBtn2").on("click", function(){
-//     // console.log("Button Click");
-//     var foodname = $("input.foodEaten").val().trim();
-//     console.log(foodname);
-//     $.get("/api/dashboard/food/findOne/"+foodname, function(data) {
-//     var foodData = data[0].FoodCalorieGain;
-//     }).then(function(){
-//         $.put("/api/dashboard/user/caloriesIn/"+currentUser, function(data) {
-//             console.log(data);
-//             $(".totalGain").html(data);
-//         })
-//     })
-// }); 
+$("#myBtn2").on("click", function(){
+    // console.log("Button Click");
+    var exerciseName = $("input.exercises").val().trim();
+    console.log(exerciseName);
+    $.get("/api/dashboard/exercise/findOne/"+exerciseName, function(data) {
+    var exerciseData = data[0].ExerciseCaloriesLost;
+    $(".totalLost").html(exerciseData);
+    })
+}); 
 
 function getFood(foodname, res) {
     $.get("/api/dashboard/food/findOne/", function(data) {
