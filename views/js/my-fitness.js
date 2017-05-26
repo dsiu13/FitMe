@@ -30,7 +30,7 @@ var exercises = document.getElementById("formBurned1").value;
 // var calBurn = $("#formBurned").val().trim();
 
 
- var currentUser = "chris";
+ // var currentUser = "chris";
 
  // var gainedCalories = [];
  var gainedCalories = [].reduce(add, 0);
