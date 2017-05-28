@@ -10,6 +10,7 @@ $(document).ready(main);
 //code that takes in values from forms
 
 
+
 var total = document.getElementById('numberDiv');
 
 var modal = document.getElementById('myModal');
@@ -19,6 +20,10 @@ var span = document.getElementsByClassName("close")[0];
 var modal2 = document.getElementById('myModal2');
 var btn2 = document.getElementById("myBtn2");
 var span2 = document.getElementsByClassName("close2")[0];
+
+var modal3 = document.getElementById('myModal3');
+var btn3 = document.getElementById('myBtn3');
+var span3 = document.getElementsByClassName('close3')[0];
 
 
 var calEaten = document.getElementById("calInput").value;
@@ -40,6 +45,12 @@ var exercises = document.getElementById("formBurned1").value;
  
 
  var lostCalories = [];
+
+
+var calEaten = document.getElementById("calInput").value;
+var calBurn = $("#formBurned").val().trim();
+var total = document.getElementById('numberDiv');
+
 
 //on click adds numbers to total
 
@@ -146,7 +157,32 @@ window.onclick = function(event) {
     if (event.target == modal2) {
         modal.style.display = "none";
     }
+
 };
+
+}
+//close out button
+
+btn3.onclick = function() {
+    modal3.style.display = 'block';
+}
+
+span3.onclick = function() {
+    modal3.style.display ='none';
+}
+window.onclick = function(event) {
+    if (event.target == modal3) {
+        modal.style.display = 'none';
+    }
+}
+
+
+function total() {
+    
+}
+
+
 
   
 
+$(".numberDiv").

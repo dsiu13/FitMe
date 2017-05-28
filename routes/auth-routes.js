@@ -4,24 +4,6 @@ var passport = require('passport');
 module.exports = function(app, passport) {
 
 
-    app.get('/', authController.signin); 
- 
-    app.get('/signup', authController.signup);
- 
- 
-    app.get('/signin', authController.signin);
- 
- 
-    app.post('/signup', passport.authenticate('local-signup', {
-            successRedirect: '/my-fitness',
- 
-            failureRedirect: '/signup'
-        }
- 
-    ));
- 
- 
-
     app.get('/history', authController.history);
 
     app.get('/goal', authController.goal);
@@ -34,7 +16,7 @@ module.exports = function(app, passport) {
  
  
     app.post('/signin', passport.authenticate('local-signin', {
-            successRedirect: '/dashboard',
+            successRedirect: '/my-fitness',
  
             failureRedirect: '/signin'
         }
